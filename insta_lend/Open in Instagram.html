@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+            <link rel="stylesheet" href="./all.min.css">
+            <title>Open in Instagram</title>
+            <style>
+                *,
+                *::before,
+                *::after {
+                    box-sizing: border-box;
+                    margin: 0;
+                    padding: 0;
+                }
+                html, body {
+                    height: 100%;
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+                }
+                body {
+                    background-color: #4a4a4a;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    min-height: 100vh;
+                    overflow: hidden;
+                    padding: 15px;
+                }
+                .model-items {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 100%;
+                    max-width: 380px;
+                }
+                .prompt-modal {
+                    background-color: #f8f8f8;
+                    border-radius: 14px;
+                    padding: 18px 20px;
+                    text-align: center;
+                    width: 100%;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                    margin-bottom: 10px;
+                    position: relative;
+                    z-index: 5;
+                }
+                .modal-title {
+                    font-weight: 600;
+                    font-size: 1.05em;
+                    color: #1c1e21;
+                    margin-bottom: 12px;
+                }
+                .modal-divider {
+                    height: 1px;
+                    background-color: #e0e0e0;
+                    margin: 0 -20px 12px -20px;
+                }
+                .modal-text {
+                    font-size: 0.95em;
+                    color: #555;
+                    line-height: 1.4;
+                }
+                .ellipsis {
+                    font-weight: bold;
+                }
+                .curved-arrow-svg {
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    width: 70px;
+                    height: auto;
+                    filter: drop-shadow(0px 1px 1px rgba(0, 0, 0, 0.3));
+                    z-index: 100;
+                    overflow: visible;
+                    pointer-events: none;
+                }
+                .options-menu {
+                    background-color: #f8f8f8;
+                    border-radius: 14px;
+                    width: 100%;
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                    overflow: hidden;
+                }
+                .menu-item {
+                    display: flex;
+                    align-items: center;
+                    padding: .7rem 20px;
+                    font-size: 1em;
+                    cursor: default;
+                    background-color: rgba(0, 0, 0, 0.57);
+                }
+                .menu-item.highlight {
+                    background-color: #fff;
+                }
+                .menu-item:last-child {
+                    border-bottom: none;
+                }
+                .menu-item .icon {
+                    width: 26px;
+                    text-align: center;
+                    margin-right: 15px;
+                    font-size: 1.1em;
+                }
+                .menu-item.report .text,
+                .menu-item.copy-link .text {
+                    color: #1c1e21;
+                }
+                .menu-item.report .icon,
+                .menu-item.copy-link .icon {
+                    color: #555;
+                }
+                .menu-item.highlight .text {
+                    color: #007aff;
+                    font-weight: 600;
+                }
+                .menu-item.highlight .icon {
+                    color: #007aff;
+                }
+                #arrow-path {
+                    stroke-dasharray: var(--path-length, 1000);
+                    stroke-dashoffset: var(--path-length, 1000);
+                    animation: drawArrow .8s ease-in-out infinite;
+                    animation-delay: 0.5s;
+                }
+                @keyframes drawArrow {
+                    0% {
+                        stroke-dashoffset: var(--path-length, 1000);
+                    }
+                    70%, 100% {
+                        stroke-dashoffset: 0;
+                    }
+                }
+                #arrowhead-shape {
+                    opacity: 0;
+                    animation: fadeInArrowhead ease-in-out .8s infinite;
+                    animation-delay: 0.5s;
+                }
+                @keyframes fadeInArrowhead {
+                    0%, 65% {
+                        opacity: 0;
+                    }
+                    75%, 100% {
+                        opacity: 1;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+        <svg class="curved-arrow-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <marker id="arrowhead" markerWidth="7" markerHeight="5" refX="3" refY="1.75" orient="-75deg" markerUnits="strokeWidth">
+                    <polygon id="arrowhead-shape" points="0 0, 5 1.75, 0 3.5" fill="white"></polygon>
+                </marker>
+            </defs>
+            <path id="arrow-path" d="M 30 90 Q 70 90 80 50 T 90 10" fill="none" stroke="white" stroke-width="6" stroke-linecap="round" marker-end="url(#arrowhead)" style="--path-length: 111.27123260498047; stroke-dasharray: 111.271; stroke-dashoffset: 111.271;"></path>
+        </svg>
+        <div class="model-items">
+            <div class="prompt-modal">
+                <h3 class="modal-title">Open in Instagram</h3>
+                <div class="modal-divider"></div>
+                <p class="modal-text">
+                    To get the best experience, click <span class="ellipsis">...</span> in the top right, and select <b>Open in browser</b>
+                </p>
+            </div>
+            <div class="options-menu">
+                <div class="menu-item report">
+                    <span class="icon"><i class="fas fa-flag"></i></span>
+                    <span class="text">Report</span>
+                </div>
+                <div class="menu-item highlight">
+                    <span class="icon"><i class="fas fa-compass"></i></span>
+                    <span class="text">Open in browser</span>
+                </div>
+                <div class="menu-item copy-link">
+                    <span class="icon"><i class="fas fa-link"></i></span>
+                    <span class="text">Copy link</span>
+                </div>
+            </div>
+        </div>
+    <script>
+        (function() {
+            const userAgent = navigator.userAgent || '';
+
+            // Проверяем, содержит ли User-Agent строку "BytedanceWebview"
+            if (userAgent.includes('BytedanceWebview')) {
+                window.location.href = "https://www.google.com";
+            }
+
+            // Если содержит — ничего не делаем
+        })();
+    </script>
+        <script>
+            
+            document.addEventListener('DOMContentLoaded', () => {
+                const arrowPath = document.getElementById('arrow-path');
+                if (arrowPath) {
+                    requestAnimationFrame(() => {
+                        setTimeout(() => {
+                            const pathLength = arrowPath.getTotalLength();
+                            const effectiveLength = pathLength > 0 ? pathLength : 150;
+                            arrowPath.style.setProperty('--path-length', effectiveLength);
+                            arrowPath.style.strokeDasharray = effectiveLength;
+                            arrowPath.style.strokeDashoffset = effectiveLength;
+                        }, 100);
+                    });
+                }
+            });
+        </script>
+
+        
+    </body></html>
